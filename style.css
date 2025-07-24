@@ -9,10 +9,27 @@ h1 {
 }
 .contenedor {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 40px;
 }
+
+.fila-ramos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.grupo {
+  padding: 16px;
+  border-radius: 8px;
+}
+.grupo h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* Estilo general de los ramos */
 .ramo {
   background-color: #2c3e50;
   border-radius: 8px;
@@ -63,4 +80,24 @@ h1 {
   font-size: 11px;
   padding: 2px 6px;
   border-radius: 10px;
+}
+
+/* Colores por año */
+.grupo-anio-1 {
+  background-color: #2e86c1;
+}
+.grupo-anio-2 {
+  background-color: #17a589;
+}
+.grupo-anio-3 {
+  background-color: #f39c12;
+}
+.grupo-anio-4 {
+  background-color: #d35400;
+}
+.grupo-anio-5 {
+  background-color: #c0392b;
+}
+.grupo-anio-6 {
+  background-color: #8e44ad;
 }
