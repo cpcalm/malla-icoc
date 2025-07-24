@@ -1,39 +1,51 @@
-fetch('malla_interactiva.json')
+let ramos = [];
+const cursados = new Set();
+
+fetch('ramos.json')
   .then(res => res.json())
   .then(data => {
-    const container = document.getElementById('malla-container');
-    data.forEach(ramo => {
-      const div = document.createElement('div');
-      div.className = 'ramo';
-      div.setAttribute('data-area', ramo.area || 'formacion-profesional');
-      div.innerHTML = `
-        <div class="header">
-          <span>${ramo.sigla}</span>
-          <span>${ramo.numero}</span>
-        </div>
-        <div class="nombre">${ramo.nombre}</div>
-        <div class="creditos">${ramo.creditos || "?"} SCT</div>
-        <div class="prereqs">
-          ${ramo.prerrequisitos.map(n => `<div class="circle">${n}</div>`).join('')}
-        </div>
-      `;
-      div.onclick = () => showModal(ramo, data);
-      container.appendChild(div);
-    });
+    ramos = data;
+    renderMalla();
   });
 
-function showModal(ramo, data) {
-  document.getElementById('modal-title').textContent = ramo.nombre;
-  document.getElementById('modal-sigla').textContent = ramo.sigla;
-  document.getElementById('modal-creditos').textContent = ramo.creditos || "N/A";
-  document.getElementById('modal-prerequisitos').textContent = ramo.prerrequisitos
-    .map(n => {
-      const r = data.find(x => x.numero === n);
-      return r ? r.sigla : `#${n}`;
-    }).join(', ') || "Ninguno";
-  document.getElementById('modal').style.display = 'block';
+function puedeActivarse(ramo) {
+  return ramo.prerrequisitos.every(n => cursados.has(Number(n)));
 }
 
-document.getElementById('close-modal').onclick = () => {
-  document.getElementById('modal').style.display = 'none';
-};
+function renderMalla() {
+  const container = document.getElementById('malla-container');
+  container.innerHTML = '';
+  ramos.forEach(ramo => {
+    const div = document.createElement('div');
+    div.classList.add('ramo');
+    if (cursados.has(ramo.numero)) {
+      div.classList.add('tachado');
+    } else if (ramo.prerrequisitos.length > 0 && !puedeActivarse(ramo)) {
+      div.classList.add('atenuado');
+    }
+
+    div.innerHTML = `
+      <div class="codigo">${ramo.codigo}</div>
+      <div class="nombre">${ramo.nombre}</div>
+      <div class="prerreqs">
+        ${ramo.prerrequisitos.map(p => `<span class="prerreq">${p}</span>`).join('')}
+      </div>
+      <div class="numero">${ramo.numero}</div>
+      <div class="creditos">${ramo.creditos}</div>
+    `;
+
+    div.addEventListener('click', () => {
+      if (cursados.has(ramo.numero)) {
+        cursados.delete(ramo.numero);
+      } else if (puedeActivarse(ramo) || ramo.prerrequisitos.length === 0) {
+        cursados.add(ramo.numero);
+      } else {
+        alert("No puedes cursar este ramo aún.");
+        return;
+      }
+      renderMalla();
+    });
+
+    container.appendChild(div);
+  });
+}
