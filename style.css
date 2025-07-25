@@ -101,3 +101,25 @@ h1 {
 .grupo-anio-6 {
   background-color: #8e44ad;
 }
+/* Progreso visual */
+#barra-progreso {
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+.progreso-texto {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+.progreso-barra {
+  background-color: #444;
+  border-radius: 8px;
+  height: 16px;
+  overflow: hidden;
+}
+.progreso-fill {
+  height: 100%;
+  background-color: #2ecc71;
+  width: 0%;
+  transition: width 0.4s ease;
+}
