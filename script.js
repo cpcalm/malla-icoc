@@ -1,4 +1,3 @@
-
 async function cargarMalla() {
   const response = await fetch("ramos.json");
   const ramos = await response.json();
@@ -33,7 +32,15 @@ function renderMalla(ramos) {
     const filaSemestres = document.createElement("div");
     filaSemestres.className = "fila-semestres";
 
-    ["I", "II"].forEach((sem) => {
+    const semestresExistentes = Object.keys(agrupado[anio]).sort((a, b) => {
+      const mapRomanoANum = {
+        I: 1, II: 2, III: 3, IV: 4, V: 5,
+        VI: 6, VII: 7, VIII: 8, IX: 9, X: 10, XI: 11
+      };
+      return (mapRomanoANum[a] || 100) - (mapRomanoANum[b] || 100);
+    });
+
+    semestresExistentes.forEach((sem) => {
       const contenedorSem = document.createElement("div");
       contenedorSem.className = "semestre-col";
 
