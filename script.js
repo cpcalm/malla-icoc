@@ -19,7 +19,13 @@ function renderMalla(ramos) {
     agrupado[anio][semestre].push(r);
   });
 
-  const anios = Object.keys(agrupado).map(n => parseInt(n)).sort((a, b) => a - b);
+  const anios = Object.keys(agrupado).map(Number).sort((a, b) => a - b);
+
+  // función para ordenar semestres en orden romano
+  const ordenRomano = {
+    I: 1, II: 2, III: 3, IV: 4, V: 5,
+    VI: 6, VII: 7, VIII: 8, IX: 9, X: 10, XI: 11
+  };
 
   anios.forEach((anio) => {
     const columna = document.createElement("div");
@@ -32,15 +38,9 @@ function renderMalla(ramos) {
     const filaSemestres = document.createElement("div");
     filaSemestres.className = "fila-semestres";
 
-    const semestresExistentes = Object.keys(agrupado[anio]).sort((a, b) => {
-      const mapRomanoANum = {
-        I: 1, II: 2, III: 3, IV: 4, V: 5,
-        VI: 6, VII: 7, VIII: 8, IX: 9, X: 10, XI: 11
-      };
-      return (mapRomanoANum[a] || 100) - (mapRomanoANum[b] || 100);
-    });
+    const semestres = Object.keys(agrupado[anio]).sort((a, b) => ordenRomano[a] - ordenRomano[b]);
 
-    semestresExistentes.forEach((sem) => {
+    semestres.forEach((sem) => {
       const contenedorSem = document.createElement("div");
       contenedorSem.className = "semestre-col";
 
@@ -52,7 +52,7 @@ function renderMalla(ramos) {
       const semContainer = document.createElement("div");
       semContainer.className = "semestre";
 
-      (agrupado[anio][sem] || []).forEach((ramo) => {
+      agrupado[anio][sem].forEach((ramo) => {
         const div = document.createElement("div");
         div.className = "ramo";
         div.dataset.numero = ramo.numero;
