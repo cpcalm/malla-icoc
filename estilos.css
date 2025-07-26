@@ -15,7 +15,7 @@ h1 {
 .contenedor {
   display: flex;
   flex-direction: row;
-  gap: 24px;
+  gap: 26px;
   align-items: flex-start;
   overflow-x: auto;
   padding-bottom: 10px;
