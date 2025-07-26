@@ -13,20 +13,26 @@ h1 {
 }
 
 .contenedor {
-  display: grid;
-  grid-template-columns: 100px repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 16px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .fila-anio {
-  display: contents;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 12px;
 }
 
 .fila-anio h2 {
-  grid-column: span 100;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  text-align: center;
   font-size: 14px;
-  margin: 6px 0 4px;
+  margin: 0;
 }
 
 .semestre {
@@ -149,3 +155,4 @@ h1 {
   width: 0%;
   transition: width 0.4s ease;
 }
+
