@@ -1,12 +1,14 @@
-let ramos = [];
-const cursados = new Set();
-
 fetch('ramos.json')
   .then(res => res.json())
   .then(data => {
     ramos = data;
     renderMalla();
   });
+
+let ramos = [];
+const cursados = new Set();
+
+
 
 function puedeActivarse(ramo) {
   return ramo.prerrequisitos.every(n => cursados.has(Number(n)));
