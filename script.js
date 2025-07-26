@@ -11,12 +11,16 @@ function renderMalla(ramos) {
 
   const agrupado = {};
   ramos.forEach((r) => {
-    if (!agrupado[r.anio]) agrupado[r.anio] = {};
-    if (!agrupado[r.anio][r.semestre]) agrupado[r.anio][r.semestre] = [];
-    agrupado[r.anio][r.semestre].push(r);
+    const anio = parseInt(r.anio); // fuerza número
+    const semestre = r.semestre;
+
+    if (!agrupado[anio]) agrupado[anio] = {};
+    if (!agrupado[anio][semestre]) agrupado[anio][semestre] = [];
+    agrupado[anio][semestre].push(r);
   });
 
-  const anios = Object.keys(agrupado).sort((a, b) => a - b);
+  const anios = Object.keys(agrupado).map(n => parseInt(n)).sort((a, b) => a - b);
+
   anios.forEach((anio) => {
     const columna = document.createElement("div");
     columna.className = `fila-anio anio-${anio}`;
@@ -46,9 +50,7 @@ function renderMalla(ramos) {
         div.dataset.numero = ramo.numero;
 
         const completado = completados.has(ramo.numero);
-        const habilitado =
-          !ramo.prerrequisitos.length ||
-          ramo.prerrequisitos.every((p) => completados.has(p));
+        const habilitado = !ramo.prerrequisitos.length || ramo.prerrequisitos.every((p) => completados.has(p));
 
         if (!habilitado) div.classList.add("atenuado");
         if (completado) div.classList.add("tachado");
@@ -91,8 +93,11 @@ function renderMalla(ramos) {
     ramos.some((r) => r.numero === parseInt(n))
   ).length;
 
-  document.querySelector(".progreso-texto").textContent = `${realizados} / ${total} ramos completados (${Math.round((realizados / total) * 100)}%)`;
-  document.querySelector(".progreso-fill").style.width = `${(realizados / total) * 100}%`;
+  document.querySelector(".progreso-texto").textContent =
+    `${realizados} / ${total} ramos completados (${Math.round((realizados / total) * 100)}%)`;
+  document.querySelector(".progreso-fill").style.width =
+    `${(realizados / total) * 100}%`;
 }
 
 cargarMalla();
+
