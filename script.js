@@ -96,4 +96,3 @@ function renderMalla(ramos) {
 }
 
 cargarMalla();
-
