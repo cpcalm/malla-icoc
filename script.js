@@ -1,0 +1,88 @@
+
+async function cargarMalla() {
+  const response = await fetch('ramos.json');
+  const data = await response.json();
+  renderMalla(data);
+}
+
+function renderMalla(ramos) {
+  const container = document.getElementById('contenedor');
+  container.innerHTML = '';
+  const completados = new Set(JSON.parse(localStorage.getItem('completados') || '[]'));
+
+  // Agrupar por año y semestre
+  const agrupado = {};
+  ramos.forEach(r => {
+    if (!agrupado[r.anio]) agrupado[r.anio] = {};
+    if (!agrupado[r.anio][r.semestre]) agrupado[r.anio][r.semestre] = [];
+    agrupado[r.anio][r.semestre].push(r);
+  });
+
+  const anios = Object.keys(agrupado).sort((a, b) => a - b);
+  anios.forEach(anio => {
+    const fila = document.createElement('div');
+    fila.className = 'fila-anio';
+
+    const titulo = document.createElement('h2');
+    titulo.textContent = `Año ${anio}`;
+    fila.appendChild(titulo);
+
+    ['I', 'II'].forEach(sem => {
+      const columna = document.createElement('div');
+      const semTitulo = document.createElement('div');
+      semTitulo.className = 'semestre-titulo';
+      semTitulo.textContent = `Semestre ${sem}`;
+      columna.appendChild(semTitulo);
+
+      const semContainer = document.createElement('div');
+      semContainer.className = 'semestre';
+
+      (agrupado[anio][sem] || []).forEach(ramo => {
+        const div = document.createElement('div');
+        div.className = 'ramo';
+        div.dataset.numero = ramo.numero;
+
+        const completado = completados.has(ramo.numero);
+        const habilitado = !ramo.prerrequisitos.length || ramo.prerrequisitos.every(p => completados.has(p));
+
+        if (!habilitado) div.classList.add('atenuado');
+        if (completado) div.classList.add('tachado');
+
+        div.innerHTML = `
+          <div class="header-ramo">
+            <div class="codigo">${ramo.codigo}</div>
+            <div class="numero">${ramo.numero}</div>
+          </div>
+          <div class="nombre">${ramo.nombre}</div>
+          <div class="prerreqs">${ramo.prerrequisitos.map(p => `<span class="prerreq">${p}</span>`).join('')}</div>
+          <div class="creditos">${ramo.creditos}</div>
+        `;
+
+        div.addEventListener('click', () => {
+          if (completados.has(ramo.numero)) {
+            completados.delete(ramo.numero);
+          } else {
+            completados.add(ramo.numero);
+          }
+          localStorage.setItem('completados', JSON.stringify([...completados]));
+          renderMalla(ramos);
+        });
+
+        semContainer.appendChild(div);
+      });
+
+      columna.appendChild(semContainer);
+      fila.appendChild(columna);
+    });
+
+    container.appendChild(fila);
+  });
+
+  // Actualizar progreso
+  const total = ramos.length;
+  const realizados = [...completados].filter(n => ramos.some(r => r.numero === parseInt(n))).length;
+  document.querySelector('.progreso-texto').textContent = `${realizados} / ${total} ramos completados (${Math.round((realizados / total) * 100)}%)`;
+  document.querySelector('.progreso-fill').style.width = `${(realizados / total) * 100}%`;
+}
+
+cargarMalla();

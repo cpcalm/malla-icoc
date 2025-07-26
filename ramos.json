@@ -1,0 +1,680 @@
+[
+  {
+    "anio": 1,
+    "semestre": "I",
+    "numero": 1,
+    "nombre": "ÁLGEBRA PARA LA INGENIERÍA",
+    "prerrequisitos": [],
+    "creditos": 7,
+    "codigo": "BAIN065"
+  },
+  {
+    "anio": 1,
+    "semestre": "I",
+    "numero": 2,
+    "nombre": "GEOMETRÍA PARA INGENIERÍA",
+    "prerrequisitos": [],
+    "creditos": 7,
+    "codigo": "BAIN067"
+  },
+  {
+    "anio": 1,
+    "semestre": "I",
+    "numero": 3,
+    "nombre": "QUÍMICA PARA INGENIERÍA",
+    "prerrequisitos": [],
+    "creditos": 5,
+    "codigo": "BAIN069"
+  },
+  {
+    "anio": 1,
+    "semestre": "I",
+    "numero": 4,
+    "nombre": "COMUNICACIÓN IDIOMA INGLÉS",
+    "prerrequisitos": [],
+    "creditos": 3,
+    "codigo": "BAIN079"
+  },
+  {
+    "anio": 1,
+    "semestre": "I",
+    "numero": 5,
+    "nombre": "TALLER DE INTRODUCCIÓN A LA INGENIERÍA CIVIL",
+    "prerrequisitos": [],
+    "creditos": 5,
+    "codigo": "IOCC072"
+  },
+  {
+    "anio": 1,
+    "semestre": "I",
+    "numero": 6,
+    "nombre": "OPTATIVO DE FORMACION GENERAL",
+    "prerrequisitos": [],
+    "creditos": 2,
+    "codigo": "OPTATIVO"
+  },
+  {
+    "anio": 1,
+    "semestre": "II",
+    "numero": 7,
+    "nombre": "COMUNICACIÓN IDIOMA ESPAÑOL",
+    "prerrequisitos": [],
+    "creditos": 3,
+    "codigo": "BAIN071"
+  },
+  {
+    "anio": 1,
+    "semestre": "II",
+    "numero": 8,
+    "nombre": "ÁLGEBRA LINEAL PARA INGENIERÍA",
+    "prerrequisitos": [
+      1
+    ],
+    "creditos": 4,
+    "codigo": "BAIN073"
+  },
+  {
+    "anio": 1,
+    "semestre": "II",
+    "numero": 9,
+    "nombre": "CÁLCULO EN UNA VARIABLE",
+    "prerrequisitos": [
+      1,
+      2
+    ],
+    "creditos": 6,
+    "codigo": "BAIN075"
+  },
+  {
+    "anio": 1,
+    "semestre": "II",
+    "numero": 10,
+    "nombre": "FÍSICA: MECÁNICA",
+    "prerrequisitos": [
+      1,
+      2
+    ],
+    "creditos": 7,
+    "codigo": "BAIN077"
+  },
+  {
+    "anio": 1,
+    "semestre": "II",
+    "numero": 11,
+    "nombre": "EDUCACIÓN FÍSICA Y SALUD",
+    "prerrequisitos": [],
+    "creditos": 2,
+    "codigo": "DYRE070"
+  },
+  {
+    "anio": 1,
+    "semestre": "II",
+    "numero": 12,
+    "nombre": "PROGRAMACIÓN",
+    "prerrequisitos": [],
+    "creditos": 3,
+    "codigo": "INFO058"
+  },
+  {
+    "anio": 1,
+    "semestre": "II",
+    "numero": 13,
+    "nombre": "TALLER DE GEOMETRÍA DESCRIPTIVA",
+    "prerrequisitos": [
+      5
+    ],
+    "creditos": 5,
+    "codigo": "IOCC079"
+  },
+  {
+    "anio": 2,
+    "semestre": "III",
+    "numero": 14,
+    "nombre": "ECUACIONES DIFERENCIALES PARA INGENIERÍA",
+    "prerrequisitos": [
+      8,
+      9
+    ],
+    "creditos": 6,
+    "codigo": "BAIN081"
+  },
+  {
+    "anio": 2,
+    "semestre": "III",
+    "numero": 15,
+    "nombre": "CÁLCULO EN VARIAS VARIABLES",
+    "prerrequisitos": [
+      9
+    ],
+    "creditos": 6,
+    "codigo": "BAIN083"
+  },
+  {
+    "anio": 2,
+    "semestre": "III",
+    "numero": 16,
+    "nombre": "FÍSICA: ONDAS Y ELECTROMAGNETISMO",
+    "prerrequisitos": [
+      9,
+      10
+    ],
+    "creditos": 7,
+    "codigo": "BAIN085"
+  },
+  {
+    "anio": 2,
+    "semestre": "III",
+    "numero": 17,
+    "nombre": "PRÁCTICA DEL OBRERO",
+    "prerrequisitos": [
+      13
+    ],
+    "creditos": 5,
+    "codigo": "ESOC100"
+  },
+  {
+    "anio": 2,
+    "semestre": "III",
+    "numero": 18,
+    "nombre": "MATERIALES DE INGENIERÍA CIVIL",
+    "prerrequisitos": [
+      3
+    ],
+    "creditos": 2,
+    "codigo": "IOCC093"
+  },
+  {
+    "anio": 2,
+    "semestre": "III",
+    "numero": 19,
+    "nombre": "TALLER DE DIBUJO EN INGENIERÍA",
+    "prerrequisitos": [
+      13
+    ],
+    "creditos": 5,
+    "codigo": "IOCC104"
+  },
+  {
+    "anio": 2,
+    "semestre": "IV",
+    "numero": 20,
+    "nombre": "MÉTODOS NUMÉRICOS PARA INGENIERÍA",
+    "prerrequisitos": [
+      14,
+      15
+    ],
+    "creditos": 5,
+    "codigo": "BAIN087"
+  },
+  {
+    "anio": 2,
+    "semestre": "IV",
+    "numero": 21,
+    "nombre": "FÍSICA: FLUIDOS Y TERMODINÁMICA",
+    "prerrequisitos": [
+      10,
+      14
+    ],
+    "creditos": 6,
+    "codigo": "BAIN089"
+  },
+  {
+    "anio": 2,
+    "semestre": "IV",
+    "numero": 22,
+    "nombre": "ESTADÍSTICA Y PROBABILIDADES PARA INGENIERÍA",
+    "prerrequisitos": [
+      8
+    ],
+    "creditos": 4,
+    "codigo": "BAIN091"
+  },
+  {
+    "anio": 2,
+    "semestre": "IV",
+    "numero": 23,
+    "nombre": "GEOLOGÍA GENERAL",
+    "prerrequisitos": [],
+    "creditos": 3,
+    "codigo": "CITI099"
+  },
+  {
+    "anio": 2,
+    "semestre": "IV",
+    "numero": 24,
+    "nombre": "MECÁNICA RACIONAL ESTÁTICA",
+    "prerrequisitos": [
+      10,
+      15
+    ],
+    "creditos": 7,
+    "codigo": "IOCC109"
+  },
+  {
+    "anio": 2,
+    "semestre": "IV",
+    "numero": 25,
+    "nombre": "TALLER DE INTRODUCCIÓN A LOS PROCESOS CONSTRUCTIVOS",
+    "prerrequisitos": [
+      19
+    ],
+    "creditos": 5,
+    "codigo": "IOCC119"
+  },
+  {
+    "anio": 3,
+    "semestre": "V",
+    "numero": 26,
+    "nombre": "ECONOMÍA",
+    "prerrequisitos": [
+      22
+    ],
+    "creditos": 4,
+    "codigo": "IECO137"
+  },
+  {
+    "anio": 3,
+    "semestre": "V",
+    "numero": 27,
+    "nombre": "MECÁNICA RACIONAL DINÁMICA",
+    "prerrequisitos": [
+      24
+    ],
+    "creditos": 7,
+    "codigo": "IIME130"
+  },
+  {
+    "anio": 3,
+    "semestre": "V",
+    "numero": 28,
+    "nombre": "MECÁNICA DE FLUIDOS",
+    "prerrequisitos": [
+      15,
+      21
+    ],
+    "creditos": 7,
+    "codigo": "IIME135"
+  },
+  {
+    "anio": 3,
+    "semestre": "V",
+    "numero": 29,
+    "nombre": "PROGRAMACIÓN Y COMPUTACIÓN PARA INGENIERÍA CIVIL",
+    "prerrequisitos": [
+      12
+    ],
+    "creditos": 5,
+    "codigo": "INFO146"
+  },
+  {
+    "anio": 3,
+    "semestre": "V",
+    "numero": 30,
+    "nombre": "MECÁNICA DE SÓLIDOS",
+    "prerrequisitos": [
+      24
+    ],
+    "creditos": 7,
+    "codigo": "IOCC147"
+  },
+  {
+    "anio": 3,
+    "semestre": "VI",
+    "numero": 31,
+    "nombre": "TALLER DE INSTALACIONES ELÉCTRICAS",
+    "prerrequisitos": [
+      16
+    ],
+    "creditos": 2,
+    "codigo": "ELEL186"
+  },
+  {
+    "anio": 3,
+    "semestre": "VI",
+    "numero": 32,
+    "nombre": "HIDRÁULICA",
+    "prerrequisitos": [
+      28
+    ],
+    "creditos": 7,
+    "codigo": "IOCC157"
+  },
+  {
+    "anio": 3,
+    "semestre": "VI",
+    "numero": 33,
+    "nombre": "ANÁLISIS DE ESTRUCTURAS ISOSTÁTICAS",
+    "prerrequisitos": [
+      30
+    ],
+    "creditos": 6,
+    "codigo": "IOCC166"
+  },
+  {
+    "anio": 3,
+    "semestre": "VI",
+    "numero": 34,
+    "nombre": "MÉTODOS MATEMÁTICOS PARA INGENIERÍA",
+    "prerrequisitos": [
+      20
+    ],
+    "creditos": 4,
+    "codigo": "IOCC204"
+  },
+  {
+    "anio": 3,
+    "semestre": "VI",
+    "numero": 35,
+    "nombre": "SISTEMAS Y PROCESOS CONSTRUCTIVOS",
+    "prerrequisitos": [
+      25
+    ],
+    "creditos": 4,
+    "codigo": "IOCC209"
+  },
+  {
+    "anio": 3,
+    "semestre": "VI",
+    "numero": 36,
+    "nombre": "TOPOGRAFÍA GENERAL",
+    "prerrequisitos": [
+      25
+    ],
+    "creditos": 7,
+    "codigo": "IOCC219"
+  },
+  {
+    "anio": 4,
+    "semestre": "VII",
+    "numero": 37,
+    "nombre": "OPTATIVO DE ESPECIALIZACIÓN I",
+    "prerrequisitos": [],
+    "creditos": 4,
+    "codigo": "OPTATIVO"
+  },
+  {
+    "anio": 4,
+    "semestre": "VII",
+    "numero": 38,
+    "nombre": "ANÁLISIS DE ESTRUCTURAS HIPERESTÁTICAS",
+    "prerrequisitos": [
+      33
+    ],
+    "creditos": 7,
+    "codigo": "IOCC222"
+  },
+  {
+    "anio": 4,
+    "semestre": "VII",
+    "numero": 39,
+    "nombre": "TECNOLOGÍA DEL HORMIGÓN",
+    "prerrequisitos": [
+      23
+    ],
+    "creditos": 4,
+    "codigo": "IOCC226"
+  },
+  {
+    "anio": 4,
+    "semestre": "VII",
+    "numero": 40,
+    "nombre": "INTRODUCCIÓN A LA MECÁNICA DE SUELOS",
+    "prerrequisitos": [
+      23,
+      30
+    ],
+    "creditos": 6,
+    "codigo": "IOCC230"
+  },
+  {
+    "anio": 4,
+    "semestre": "VII",
+    "numero": 41,
+    "nombre": "INGENIERÍA VIAL",
+    "prerrequisitos": [
+      36
+    ],
+    "creditos": 4,
+    "codigo": "IOCC235"
+  },
+  {
+    "anio": 4,
+    "semestre": "VII",
+    "numero": 42,
+    "nombre": "TALLER DE REDES DE AGUA POTABLE Y ALCANTARILLADO",
+    "prerrequisitos": [
+      32
+    ],
+    "creditos": 5,
+    "codigo": "IOCC240"
+  },
+  {
+    "anio": 4,
+    "semestre": "VIII",
+    "numero": 43,
+    "nombre": "OPTATIVO DE ESPECIALIZACIÓN II",
+    "prerrequisitos": [],
+    "creditos": 4,
+    "codigo": "OPTATIVO"
+  },
+  {
+    "anio": 4,
+    "semestre": "VIII",
+    "numero": 44,
+    "nombre": "DINÁMICA DE ESTRUCTURAS",
+    "prerrequisitos": [
+      27,
+      38
+    ],
+    "creditos": 7,
+    "codigo": "IOCC244"
+  },
+  {
+    "anio": 4,
+    "semestre": "VIII",
+    "numero": 45,
+    "nombre": "DISEÑO DE ELEMENTOS DE HORMIGÓN ARMADO",
+    "prerrequisitos": [
+      38,
+      39
+    ],
+    "creditos": 7,
+    "codigo": "IOCC248"
+  },
+  {
+    "anio": 4,
+    "semestre": "VIII",
+    "numero": 46,
+    "nombre": "MECÁNICA DE SUELOS APLICADA",
+    "prerrequisitos": [
+      40
+    ],
+    "creditos": 6,
+    "codigo": "IOCC255"
+  },
+  {
+    "anio": 4,
+    "semestre": "VIII",
+    "numero": 47,
+    "nombre": "EVALUACIÓN DE PROYECTOS",
+    "prerrequisitos": [
+      35,
+      41
+    ],
+    "creditos": 4,
+    "codigo": "IOCC256"
+  },
+  {
+    "anio": 4,
+    "semestre": "VIII",
+    "numero": 48,
+    "nombre": "TALLER DE INSTALACIONES SANITARIAS",
+    "prerrequisitos": [
+      42
+    ],
+    "creditos": 2,
+    "codigo": "IOCC258"
+  },
+  {
+    "anio": 5,
+    "semestre": "IX",
+    "numero": 49,
+    "nombre": "OPTATIVO DE PROFUNDIZACIÓN I",
+    "prerrequisitos": [],
+    "creditos": 5,
+    "codigo": "OPTATIVO"
+  },
+  {
+    "anio": 5,
+    "semestre": "IX",
+    "numero": 50,
+    "nombre": "ESTRUCTURAS DE HORMIGÓN ARMADO",
+    "prerrequisitos": [
+      45
+    ],
+    "creditos": 6,
+    "codigo": "IOCC261"
+  },
+  {
+    "anio": 5,
+    "semestre": "IX",
+    "numero": 51,
+    "nombre": "ESTRUCTURAS DE ACERO",
+    "prerrequisitos": [
+      38
+    ],
+    "creditos": 6,
+    "codigo": "IOCC265"
+  },
+  {
+    "anio": 5,
+    "semestre": "IX",
+    "numero": 52,
+    "nombre": "INGENIERÍA SISMO RESISTENTE",
+    "prerrequisitos": [
+      38
+    ],
+    "creditos": 4,
+    "codigo": "IOCC269"
+  },
+  {
+    "anio": 5,
+    "semestre": "IX",
+    "numero": 53,
+    "nombre": "PROGRAMACIÓN Y ADMINISTRACIÓN DE OBRAS",
+    "prerrequisitos": [
+      47
+    ],
+    "creditos": 4,
+    "codigo": "IOCC275"
+  },
+  {
+    "anio": 5,
+    "semestre": "IX",
+    "numero": 54,
+    "nombre": "TALLER DE FUNDACIONES",
+    "prerrequisitos": [
+      45,
+      46
+    ],
+    "creditos": 4,
+    "codigo": "IOCC277"
+  },
+  {
+    "anio": 5,
+    "semestre": "X",
+    "numero": 55,
+    "nombre": "OPTATIVO DE PROFUNDIZACIÓN II",
+    "prerrequisitos": [],
+    "creditos": 5,
+    "codigo": "OPTATIVO"
+  },
+  {
+    "anio": 5,
+    "semestre": "X",
+    "numero": 56,
+    "nombre": "GIRA DE ESTUDIOS",
+    "prerrequisitos": [
+      47
+    ],
+    "creditos": 2,
+    "codigo": "ESOC290"
+  },
+  {
+    "anio": 5,
+    "semestre": "X",
+    "numero": 57,
+    "nombre": "DISEÑO ESTRUCTURAL DE PAVIMENTO",
+    "prerrequisitos": [
+      40
+    ],
+    "creditos": 4,
+    "codigo": "IOCC279"
+  },
+  {
+    "anio": 5,
+    "semestre": "X",
+    "numero": 58,
+    "nombre": "DISEÑO AVANZADO DE ESTRUCTURAS DE ACERO",
+    "prerrequisitos": [
+      51
+    ],
+    "creditos": 6,
+    "codigo": "IOCC280"
+  },
+  {
+    "anio": 5,
+    "semestre": "X",
+    "numero": 59,
+    "nombre": "INGENIERÍA AMBIENTAL",
+    "prerrequisitos": [
+      47
+    ],
+    "creditos": 4,
+    "codigo": "IOCC285"
+  },
+  {
+    "anio": 5,
+    "semestre": "X",
+    "numero": 60,
+    "nombre": "TALLER DE DISEÑO ESTRUCTURAL",
+    "prerrequisitos": [
+      50,
+      51,
+      54
+    ],
+    "creditos": 6,
+    "codigo": "IOCC288"
+  },
+  {
+    "anio": 5,
+    "semestre": "X",
+    "numero": 61,
+    "nombre": "PROYECTO DE TÍTULO",
+    "prerrequisitos": [
+      47
+    ],
+    "creditos": 4,
+    "codigo": "IOCC298"
+  },
+  {
+    "anio": 6,
+    "semestre": "XI",
+    "numero": 62,
+    "nombre": "PRÁCTICA PROFESIONAL",
+    "prerrequisitos": [],
+    "creditos": 14,
+    "codigo": "ESOC295"
+  },
+  {
+    "anio": 6,
+    "semestre": "XI",
+    "numero": 63,
+    "nombre": "TRABAJO DE TÍTULO",
+    "prerrequisitos": [
+      61
+    ],
+    "creditos": 16,
+    "codigo": "ESOC298"
+  }
+]
