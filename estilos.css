@@ -15,13 +15,14 @@ h1 {
 .contenedor {
   display: flex;
   flex-direction: row;
-  gap: 26px;
+  gap: 24px;
   align-items: flex-start;
   overflow-x: auto;
   padding-bottom: 10px;
 }
 
 .fila-anio {
+  text-align: center;
   display: flex;
   flex-direction: column;
   gap: 6px;
