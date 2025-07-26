@@ -84,14 +84,17 @@ function renderMalla() {
         div.setAttribute('title', tooltip);
 
         div.innerHTML = `
-          <div class="codigo">${ramo.codigo}</div>
-          <div class="nombre">${ramo.nombre}</div>
-          <div class="prerreqs">
-            ${ramo.prerrequisitos.map(p => `<span class="prerreq">${p}</span>`).join('')}
-          </div>
-          <div class="numero">${ramo.numero}</div>
-          <div class="creditos">${ramo.creditos}</div>
-        `;
+  <div class="header-ramo">
+    <div class="codigo">${ramo.codigo}</div>
+    <div class="numero">${ramo.numero}</div>
+  </div>
+  <div class="nombre">${ramo.nombre}</div>
+  <div class="prerreqs">
+    ${ramo.prerrequisitos.map(p => `<span class="prerreq">${p}</span>`).join('')}
+  </div>
+  <div class="creditos">${ramo.creditos}</div>
+`;
+
 
         div.addEventListener('click', () => {
           if (cursados.has(ramo.numero)) {
