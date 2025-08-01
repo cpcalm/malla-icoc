@@ -21,7 +21,6 @@ function renderMalla(ramos) {
 
   const anios = Object.keys(agrupado).map(Number).sort((a, b) => a - b);
 
-  // función para ordenar semestres en orden romano
   const ordenRomano = {
     I: 1, II: 2, III: 3, IV: 4, V: 5,
     VI: 6, VII: 7, VIII: 8, IX: 9, X: 10, XI: 11
@@ -107,21 +106,23 @@ function renderMalla(ramos) {
     `${realizados} / ${total} ramos completados (${Math.round((realizados / total) * 100)}%)`;
   document.querySelector(".progreso-fill").style.width =
     `${(realizados / total) * 100}%`;
-// Mostrar mensaje de felicitación y confeti si se completa el 100%
-if (realizados === total && !document.getElementById("felicitacion")) {
-  const mensaje = document.createElement("div");
-  mensaje.id = "felicitacion";
-  mensaje.innerHTML = "🎉 Felicidades ingeniero/a, te deseo lo mejor en esta siguiente etapa 🎉";
-  mensaje.className = "mensaje-felicitacion";
-  document.body.appendChild(mensaje);
 
-  // Confeti con canvas-confetti (CDN debe estar en index.html)
-  confetti({
-    particleCount: 200,
-    spread: 160,
-    origin: { y: 0.6 }
-  });
+  // Mostrar mensaje de felicitación y confeti si se completa el 100%
+  if (realizados === total && !document.getElementById("felicitacion")) {
+    const mensaje = document.createElement("div");
+    mensaje.id = "felicitacion";
+    mensaje.innerHTML = "🎉 Felicidades ingeniero/a, te deseo lo mejor en esta siguiente etapa 🎉";
+    mensaje.className = "mensaje-felicitacion";
+    document.body.appendChild(mensaje);
+
+    if (typeof confetti === "function") {
+      confetti({
+        particleCount: 200,
+        spread: 160,
+        origin: { y: 0.6 }
+      });
+    }
+  }
 }
-
 
 cargarMalla();
