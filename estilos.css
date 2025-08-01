@@ -32,7 +32,6 @@ h1 {
 
 
 .fila-anio {
-  text-align: center;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -40,7 +39,11 @@ h1 {
   padding: 10px;
   border-radius: 6px;
   color: white;
+  flex-shrink: 0;
+  flex-grow: 0;
+  height: auto;
 }
+
 
 .fila-anio.anio-1 { background-color: #1abc9c; }
 .fila-anio.anio-2 { background-color: #3498db; }
