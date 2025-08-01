@@ -166,3 +166,24 @@ h1 {
   width: 0%;
   transition: width 0.4s ease;
 }
+.mensaje-felicitacion {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #27ae60;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  animation: aparecer 0.5s ease-in-out;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateX(-50%) scale(0.9); }
+  to { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
