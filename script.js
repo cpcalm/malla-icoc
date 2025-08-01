@@ -107,6 +107,21 @@ function renderMalla(ramos) {
     `${realizados} / ${total} ramos completados (${Math.round((realizados / total) * 100)}%)`;
   document.querySelector(".progreso-fill").style.width =
     `${(realizados / total) * 100}%`;
+// Mostrar mensaje de felicitación y confeti si se completa el 100%
+if (realizados === total && !document.getElementById("felicitacion")) {
+  const mensaje = document.createElement("div");
+  mensaje.id = "felicitacion";
+  mensaje.innerHTML = "🎉 Felicidades ingeniero/a, te deseo lo mejor en esta siguiente etapa 🎉";
+  mensaje.className = "mensaje-felicitacion";
+  document.body.appendChild(mensaje);
+
+  // Confeti con canvas-confetti (CDN debe estar en index.html)
+  confetti({
+    particleCount: 200,
+    spread: 160,
+    origin: { y: 0.6 }
+  });
 }
+
 
 cargarMalla();
